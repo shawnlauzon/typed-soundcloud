@@ -1,6 +1,6 @@
 {
   "name": "soundcloud",
-  "main": "sdk.d.ts",
+  "main": "index.d.ts",
   "homepage": "https://github.com/soundcloud/soundcloud-javascript#readme",
   "version": "3.1.2",
   "globalDevDependencies": {
