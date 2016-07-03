@@ -3,6 +3,9 @@
 
 The type definition for [`soundcloud`](https://github.com/soundcloud/soundcloud-javascript.git)
 
+Includes methods for playback, but does not include the Recorder class which lies
+within the SC object.
+
 ## LICENSE
 
 MIT
