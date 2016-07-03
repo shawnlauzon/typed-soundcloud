@@ -1,0 +1,12 @@
+{
+  "name": "soundcloud",
+  "main": "sdk.d.ts",
+  "homepage": "https://github.com/soundcloud/soundcloud-javascript#readme",
+  "version": "3.1.2",
+  "globalDevDependencies": {
+    "node": "registry:env/node#6.0.0+20160622202520"
+  },
+  "devDependencies": {
+    "blue-tape": "registry:npm/blue-tape#0.2.0+20160623043621"
+  }
+}
