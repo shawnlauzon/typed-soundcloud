@@ -1,6 +1,7 @@
+import { Promise } from 'es6-promise';
 interface SoundCloud {
-  initialize(options: InitializeOptions);
-  connect(options?: ConnectOptions): Promise<any>;
+  initialize(options: SoundCloud.InitializeOptions);
+  connect(options?: SoundCloud.ConnectOptions): Promise<any>;
 
   get(path: string, params?: any): Promise<any>;
   post(path: string, params?: any): Promise<any>;
@@ -11,30 +12,32 @@ interface SoundCloud {
   resolve(url: string): Promise<any>;
   oEmbed(url: string, params?: any): Promise<any>;
 
-  stream(trackPath: string, secretToken?: string): Promise<Player>;
+  stream(trackPath: string, secretToken?: string): Promise<SoundCloud.Player>;
 }
 
-interface InitializeOptions {
-  client_id: string;
-  redirect_uri?: string;
-  oauth_token?: string;
+declare namespace SoundCloud {
+  interface InitializeOptions {
+    client_id: string;
+    redirect_uri?: string;
+    oauth_token?: string;
+  }
+
+  interface ConnectOptions {
+    client_id: string;
+    redirect_uri: string;
+    scope?: string;
+  }
+
+  interface Player {
+    play();
+    pause();
+    seek(time: number);
+    currentTime(): number;
+    setVolume(volume: number);
+    getVolume(): number;
+    on(event: string, handler: any);
+  }
 }
 
-interface ConnectOptions {
-  client_id: string;
-  redirect_uri: string;
-  scope?: string;
-}
-
-interface Player {
-  play();
-  pause();
-  seek(time: number);
-  currentTime(): number;
-  setVolume(volume: number);
-  getVolume(): number;
-  on(event: string, handler: any);
-}
-
-declare let SC: SoundCloud;
-export = SC;
+declare let SoundCloud: SoundCloud;
+export = SoundCloud;

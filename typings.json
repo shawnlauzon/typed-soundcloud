@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "blue-tape": "registry:npm/blue-tape#0.2.0+20160623043621"
+  },
+  "dependencies": {
+    "es6-promise": "registry:npm/es6-promise#3.0.0+20160211003958"
   }
 }
