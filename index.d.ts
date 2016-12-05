@@ -1,6 +1,7 @@
 import { Promise } from 'es6-promise';
+
 interface SoundCloud {
-  initialize(options: SoundCloud.InitializeOptions);
+  initialize(options: SoundCloud.InitializeOptions): void;
   connect(options?: SoundCloud.ConnectOptions): Promise<any>;
 
   get(path: string, params?: any): Promise<any>;
@@ -29,13 +30,13 @@ declare namespace SoundCloud {
   }
 
   interface Player {
-    play();
-    pause();
-    seek(time: number);
+    play(): void;
+    pause(): void;
+    seek(time: number): void;
     currentTime(): number;
-    setVolume(volume: number);
+    setVolume(volume: number): void;
     getVolume(): number;
-    on(event: string, handler: any);
+    on(event: string, handler: any): void;
   }
 }
 
